@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: production-config
+data:
+  value1: "CHANGEME"
+  value2: "CHANGEME"

@@ -1,0 +1,6 @@
+resources:
+  - ../base
+  - production-specific-config.yaml
+
+patches:
+  - path: patch.yaml

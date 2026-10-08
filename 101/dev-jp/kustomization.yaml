@@ -1,0 +1,8 @@
+resources:
+  - ../base
+
+patches:
+  - target:
+      kind: ConfigMap
+      name: config-1
+    patch: '[{ "op": "replace", "path": "/data/DATABASE", "value": "DEV" }]'

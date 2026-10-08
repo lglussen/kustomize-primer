@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-1
+data:
+  DATABASE: DEV
+  notes: Kustomize strategic merge used (external patch file)
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-1
+data:
+  again: |
+    ok ... this is another patch on the same object.
+    It would make more sense to just include it in the first
+    patch, but we are only working with one object in this example
+    and we are trying to demonstrait the syntax for including multiple
+    Strategic Merge patches in the same patch file.

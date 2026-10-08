@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ocp-env
+data:
+  OCP_ENV: "Development"

@@ -1,0 +1,24 @@
+resources:
+  - ../base
+
+patches:
+  - path: patch.yaml
+  - patch: |
+      apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: config-1
+      data:
+        inline_strategic_merge: True
+  - target:
+      kind: ConfigMap
+      name: config-1
+    patch: '[{ "op": "replace", "path": "/data/jsonpatch", "value": true }]'
+  - target:
+      kind: ConfigMap
+      name: config-1
+    patch: |
+      - op: replace
+        path: /data/jsonpatch_yaml
+        value: "True"
+

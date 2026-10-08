@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-1
+data:
+  strategic_merge_patch_file: True

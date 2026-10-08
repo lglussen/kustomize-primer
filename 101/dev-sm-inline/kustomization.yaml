@@ -1,0 +1,12 @@
+resources:
+  - ../base
+
+patches:
+  - patch: |
+      apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: config-1
+      data:
+        DATABASE: DEV
+        notes: Inline Kustomize strategic merge used
