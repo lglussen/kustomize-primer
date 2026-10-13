@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: webapp
+  namespace: app-201
+  annotations:
+    haproxy.router.openshift.io/balance: leastconn
+    haproxy.router.openshift.io/balance : roundrobin
+    haproxy.router.openshift.io/disable_cookies: 'true'
+spec:
+  to:
+    kind: Service
+    name: webapp
+    weight: 100
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+  wildcardPolicy: None

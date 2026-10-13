@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../base
+
+helmGlobals:
+  chartHome: ../charts 
+
+helmCharts:
+  - name: sandbox-namespaces
+    valuesFile: ./values-dev.yaml
+
+configMapGenerator:
+  - name: ocp-env
+    namespace: app-201
+    literals:
+      - OCP_ENV=Development
+

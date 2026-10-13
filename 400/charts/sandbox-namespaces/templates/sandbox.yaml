@@ -1,0 +1,10 @@
+{{- range .Values.users }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ . }}-{{ $.Values.namespace_suffix }}
+  labels:
+    sandbox: {{ $.Values.namespace_label }}
+{{- end }}
+
