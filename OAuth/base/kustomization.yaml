@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - oauth.yaml
+
+configMapGenerator:
+  - name: ca-config-map
+    namespace: openshift-config
+    files:
+      - ca.crt=oauth/ldap-ca-bundle.crt
+
+#  - name: ldap-group-syncer
+#    namespace: ldap-sync
+#    files:
+#      - sync.yaml=ldap-sync.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
