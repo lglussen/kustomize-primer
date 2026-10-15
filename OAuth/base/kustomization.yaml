@@ -8,7 +8,7 @@ configMapGenerator:
   - name: ca-config-map
     namespace: openshift-config
     files:
-      - ca.crt=oauth/ldap-ca-bundle.crt
+      - ca.crt=ldap-ca-bundle.crt
 
 #  - name: ldap-group-syncer
 #    namespace: ldap-sync
